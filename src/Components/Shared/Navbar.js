@@ -291,7 +291,7 @@ const Navbar = () => {
                   >
                     Our Company
                   </a>
-                  <ArrowDown fill="#121212" className="lg:block hidden" />
+                  {/* <ArrowDown fill="#121212" className="lg:block hidden" /> */}
                   <button
                     onClick={toggleCompany}
                     type="button"
