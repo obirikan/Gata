@@ -114,38 +114,10 @@ const Footer = () => {
   ];
   return (
     <footer className="bg-appBlack text-white px-6 ">
-      <div className="py-[64px] container mx-auto">
-        <Rattify fill="white" />
+      {/* <div className="py-[64px] container mx-auto"> */}
+        {/* <Rattify fill="white" /> */}
         <div className="mt-[56px]">
           <div className="lg:grid grid-cols-[35%_65%] 2xl:gap-[160px] xl:gap-[80px] md:gap-[30px] block ">
-            <div className="">
-              <h3 className="font-semibold text-[24px]">
-                Sign up for updates on Rattify’s products
-              </h3>
-              <form>
-                <div className="relative z-0 w-full mb-6 group mt-[32px]">
-                  <input
-                    type="email"
-                    name="floating_email"
-                    id="floating_email"
-                    className="block py-2.5 px-0 w-full text-[20px] text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none  focus:outline-none  peer"
-                    placeholder=" "
-                  />
-                  <label
-                    htmlFor="floating_email"
-                    className="peer-focus:font-medium absolute text-[20px] text-gray-500  duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-appBlue  peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-                  >
-                    enter email
-                  </label>
-                  <button className="absolute top-[10px] right-[10px] leading-[120%] text-[20px] font-semibold">submit</button>
-                </div>
-              </form>
-              <div className="mt-45px] flex gap-3 my-[45px]">
-                <Twitter />
-                <LinkedIn />
-                <Youtube />
-              </div>
-            </div>
             <div className="lg:grid grid-cols-3 lg:gap-[40px] gap-[20px] block">
               <div className="">
                 <h3 className="leading-[150%] text-sm font-semibold mb-[22px]">
@@ -186,7 +158,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-      </div>
+      {/* </div> */}
     </footer>
   );
 };
