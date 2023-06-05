@@ -1,0 +1,374 @@
+html,
+body {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  /* background-color: #F5F6F8; */
+  overflow-x: hidden;
+}
+
+#navbar {
+  transition: top 0.3s;
+}
+
+
+.container {
+  max-width: 1200px;
+}
+
+/* *{
+  border:1px solid black ;
+} */
+
+
+.gradient-bg {
+  background: linear-gradient(95.83deg, #1753A5 0%, #1753A5 96.36%);
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+
+}
+
+.gradient-bg:hover {
+  background: linear-gradient(95.83deg, #1753A5 0%, #C23928 96.36%);
+  background-position: 100% 0;
+  transition: all 0.3s;
+  -webkit-transition: all 0.3s;
+}
+
+
+
+
+.hero-text-bg {
+  background: linear-gradient(95.83deg, #1753A5 0%, #CA66EA 96.36%);
+  opacity: 0.32;
+  filter: blur(50px);
+}
+
+.explore-text-bg {
+  background: linear-gradient(95.83deg, #1753A5 0%, #CA66EA 96.36%);
+  opacity: 0.45;
+  filter: blur(60px);
+
+}
+
+.map-bg {
+  background: url(./assets/images/map.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.industry-text {
+  background: linear-gradient(95.83deg, #1753A5 0%, #CA66EA 96.36%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-fill-color: transparent;
+}
+
+.company-hero {
+  background: url(./assets/images/company-hero.png);
+  min-height: 560px;
+  /* background-attachment: fixed; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.careers-hero {
+  background: url(./assets/images/workspace.png);
+  min-height: 560px;
+  /* background-attachment: fixed; */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.solution-hero {
+  background: url(./assets/images/card.png);
+  min-height: 440px;
+  background-attachment: fixed;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.card-hero {
+  background: url(./assets/images/card.png);
+  min-height: 440px;
+  background-attachment: fixed;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.biometric-hero {
+  background: url(./assets/images/biometric.png);
+  min-height: 440px;
+  background-attachment: fixed;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.kyc-hero {
+  background: url(./assets/images/kyc.png);
+  min-height: 440px;
+  background-attachment: fixed;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.fraud-hero {
+  background: url(./assets/images/fraud.png);
+  min-height: 440px;
+  background-attachment: fixed;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.assisted-hero {
+  background: url(./assets/images/assisted.png);
+  min-height: 440px;
+  background-attachment: fixed;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.social-hero {
+  background: url(./assets/images/social.png);
+  min-height: 440px;
+  background-attachment: fixed;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.customer-hero {
+  background: url(./assets/images/onboarding.png);
+  min-height: 440px;
+  background-attachment: fixed;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.proof-hero {
+  background: url(./assets/images/proof-of-address.png);
+  min-height: 440px;
+  background-attachment: fixed;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.insurance-hero {
+  background: url(./assets/images/insurance.png);
+  min-height: 440px;
+  background-attachment: fixed;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.ppe-hero {
+  background: url(./assets/images/ppe.png);
+  min-height: 440px;
+  background-attachment: fixed;
+  background-position: right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+
+/* .our-company:hover #our-company-menu {
+  display: block;
+}
+
+
+.our-solutions:hover #our-solutions-menu {
+  display: block;
+}
+
+.industries:hover #industries-menu {
+  display: block;
+
+} */
+
+.nav-link:hover .title-icon {
+  background: #F5F6F8;
+}
+
+.owl-nav {
+  justify-content: space-between;
+  display: flex;
+  position: absolute;
+  width: 100%;
+  top: 40%;
+  transform: translateY(-40%);
+  pointer-events: none;
+}
+
+.owl-carousel {
+  position: relative;
+}
+
+.custom-next {
+  width: 64px;
+  height: 64px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04), 0px 8px 16px rgba(0, 0, 0, 0.08);
+  margin-right: 16px;
+  pointer-events: auto;
+}
+
+
+.custom-prev {
+  width: 64px;
+  height: 64px;
+  background: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.04), 0px 8px 16px rgba(0, 0, 0, 0.08);
+  margin-right: 16px;
+  pointer-events: auto;
+}
+
+.custom-next:hover {
+  background: white !important;
+}
+
+.custom-prev:hover {
+  background: white !important;
+}
+
+
+.owl-next:hover {
+  background: transparent !important;
+}
+
+.owl-prev:hover {
+  background: transparent !important;
+}
+
+
+.owl-theme .owl-nav .disabled {
+  visibility: hidden !important;
+}
+
+.owl-theme .owl-dots {
+  display: none;
+}
+
+.enterprise-theme {
+  display: none !important;
+}
+
+.enterprise-theme .owl-stage-outer {
+  height: fit-content;
+}
+
+.see-doc:hover .diagonal-arrow {
+  transform: rotate(45deg);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+
+
+select::-ms-expand {
+  display: none;
+}
+
+select {
+  -webkit-appearance: none !important;
+  -moz-appearance: none ;
+  text-indent: 1px;
+  text-overflow: '';
+}
+
+select:not([size]){
+  background-image: none;
+}
+
+@media (max-width: 1024px) {
+  .enterprise-bg {
+    background-image: url(./assets/images/enterprise.jpg);
+  }
+
+  .company-hero,
+  .careers-hero,
+  .solution-hero,
+  .card-hero .biometric-hero .kyc-hero .fraud-hero .assisted-hero .social-hero .proof-hero .insurance-hero .ppe-hero {
+    min-height: 240px;
+  }
+
+  .owl-theme .owl-dots {
+    display: block;
+    margin-top: 32px;
+  }
+
+  .owl-theme .owl-dots .owl-dot.active span,
+  .owl-theme .owl-dots .owl-dot:hover span {
+    background-color: #121212 !important;
+  }
+
+  .custom-prev,
+  .custom-next {
+    display: none;
+  }
+
+  .owl-next,
+  .owl-prev {
+    display: none !important;
+  }
+
+  .enterprise-theme .owl-dots {
+    margin-top: 0;
+  }
+
+  .enterprise-theme {
+    display: block !important;
+  }
+
+  .nav-list {
+    /* lg:overflow-hidden overflow-x-hidden overflow-y-scroll   */
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+}
+
+@media(hover:hover) and (pointer: fine) {
+
+  .our-company:hover #our-company-menu {
+    display: block;
+  }
+
+
+  .our-solutions:hover #our-solutions-menu {
+    display: block;
+  }
+
+  .industries:hover #industries-menu {
+    display: block;
+
+  }
+
+
+  .nav-link:hover .title-icon {
+    background: #F5F6F8;
+  }
+
+
+}
