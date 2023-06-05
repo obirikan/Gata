@@ -171,17 +171,11 @@ const Navbar = () => {
             <Rattify fill="black" />
           </a>
           <div className="md:order-2 gap-5 ">
-            <button
-              type="button"
-              className="text-black lg:inline-block hidden  focus:ring-blue-300  rounded-lg  px-5 py-2.5 text-center mr-3 md:mr-0 "
-            >
-              <a href="https://dashboard.rattify.com/login"> Sign in</a>
-            </button>
             <a
               href="/talk-to-us"
               className="text-white gradient-bg  lg:inline-block hidden focus:ring-4   rounded-lg  px-5 py-2.5 text-center mr-3 md:mr-0 "
             >
-              Talk to us
+              Create An Account 
             </a>
             <button
               onClick={toggleMenu}
@@ -205,11 +199,11 @@ const Navbar = () => {
                 <div className="lg:p-[12px_16px] p-[16px_24px] flex items-center lg:justify-start justify-between w-full title-icon rounded-lg">
                   <a
                     href="/our-solutions"
-                    className="block  lg:pl-3 lg:pr-4 lg:font-normal font-semibold lg:text-base text-[18px] rounded  md:hover:bg-transparent"
+                    className="block  lg:pl-3 lg:pr-4 lg:font-normal font-semibold lg:text-base text-[18px] rounded "
                   >
                     Our Solutions
                   </a>
-                  <ArrowDown fill="#121212" className="lg:block hidden" />
+                  {/* <ArrowDown fill="#121212" className="lg:block hidden" /> */}
                   <button
                     onClick={toggleSolutions}
                     type="button"
@@ -220,26 +214,26 @@ const Navbar = () => {
                     <Plus fill="#121212" className="block lg:hidden" />
                   </button>
                 </div>
-                <div
+                {/* <div
                   ref={solutionsMenuRef}
                   id="our-solutions-menu"
                   className="w-[100vw] left-0 hidden bg-white lg:border  lg:mt-[83px] m-0 lg:absolute lg:top-0 top-[23px] z-30 overflow-y-scroll max-h-[calc(100vh_-_84px)]"
                 >
-                  <div className="lg:grid grid-cols-3 block gap-8 container mx-auto lg:pt-24">
+                  {/* <div className="lg:grid grid-cols-3 block gap-8 container mx-auto lg:pt-24">
                     {solutions.map((ele, i) => (
                       <a href={ele.link}>
                         <div
                           key={i}
                           className="p-5 mb-5 hover:bg-cardHoverBg lg:rounded-3xl lg:border-none border-b lg:h-[200px] cursor-pointer"
                         >
-                          <span className="lg:block hidden">{ele.icon}</span>
+                           <span className="lg:block hidden">{ele.icon}</span> 
                           <h3 className="font-semibold text-lg">{ele.title}</h3>
                           <p>{ele.text}</p>
                         </div>
                       </a>
                     ))}
-                  </div>
-                </div>
+                  </div> 
+                </div> */}
               </li>
               <li className="lg:flex block  items-center gap-2  industries nav-link lg:w-auto w-full lg:px-0 p-0 lg:static relative">
                 <div className="lg:p-[12px_16px] p-[16px_24px] flex items-center lg:justify-start justify-between lg:w-auto w-full title-icon rounded-lg  relative">
@@ -249,7 +243,7 @@ const Navbar = () => {
                   >
                     Industries
                   </a>
-                  <ArrowDown fill="#121212" className="lg:block hidden" />
+                  {/* <ArrowDown fill="#121212" className="lg:block hidden" /> */}
                   <button
                     onClick={toggleIndustries}
                     type="button"
@@ -261,7 +255,7 @@ const Navbar = () => {
                   </button>
                 </div>
 
-                <div
+                {/* <div
                   ref={industriesMenuRef}
                   id="industries-menu"
                   className="w-[100vw] left-0  hidden  bg-white lg:border lg:mt-[83px] m-0 lg:absolute  lg:top-0 top-[-23px] z-30 "
@@ -279,7 +273,7 @@ const Navbar = () => {
                       </a>
                     ))}
                   </div>
-                </div>
+                </div> */}
               </li>
               <li className="flex items-center lg:hover:bg-cardHoverBg rounded-xl mt-4 mb-4 lg:w-auto w-full cursor-pointer lg:px-0 px-6">
                 <Link
