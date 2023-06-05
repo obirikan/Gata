@@ -116,9 +116,7 @@ const Navbar = () => {
     },
   ];
 
-  let menuButton;
   let mainMenu = useRef(null);
-  const menuToggleRef = useRef();
   const solutionsMenuRef = useRef(null);
   const industriesMenuRef = useRef(null);
   const companyMenuRef = useRef(null);
