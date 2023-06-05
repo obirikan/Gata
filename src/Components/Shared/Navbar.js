@@ -172,7 +172,7 @@ const Navbar = () => {
           </a>
           <div className="md:order-2 gap-5 ">
             <a
-              href="/talk-to-us"
+              href="#no"
               className="text-white gradient-bg  lg:inline-block hidden focus:ring-4   rounded-lg  px-5 py-2.5 text-center mr-3 md:mr-0 "
             >
               Create An Account 
@@ -302,7 +302,7 @@ const Navbar = () => {
                     <Plus fill="#121212" className="block lg:hidden" />
                   </button>
                 </div>
-                <div
+                {/* <div
                   ref={companyMenuRef}
                   id="our-company-menu"
                   className="lg:w-[200px] w-full left-0  hidden  bg-white lg:border  lg:mt-[83px] m-0 lg:absolute lg:top-0 top-[-23px] z-30 "
@@ -361,7 +361,7 @@ const Navbar = () => {
                       </a>
                     </li>
                   </ul>
-                </div>
+                </div> */}
               </li>
               <li className="flex items-center lg:hover:bg-cardHoverBg rounded-xl mt-4 mb-4 cursor-pointer lg:w-auto w-full lg:px-0 px-6">
                 <a
