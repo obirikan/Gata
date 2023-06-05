@@ -211,7 +211,7 @@ const Navbar = () => {
                     // aria-controls="our-solutions-menu"
                     // data-collapse-toggle="our-solutions-menu"
                   >
-                    <Plus fill="#121212" className="block lg:hidden" />
+                    {/* <Plus fill="#121212" className="block lg:hidden" /> */}
                   </button>
                 </div>
                 {/* <div
@@ -251,7 +251,7 @@ const Navbar = () => {
                     // aria-controls="our-solutions-menu"
                     // data-collapse-toggle="our-solutions-menu"
                   >
-                    <Plus fill="#121212" className="block lg:hidden" />
+                    {/* <Plus fill="#121212" className="block lg:hidden" /> */}
                   </button>
                 </div>
 
@@ -299,7 +299,7 @@ const Navbar = () => {
                     // aria-controls="our-solutions-menu"
                     // data-collapse-toggle="our-solutions-menu"
                   >
-                    <Plus fill="#121212" className="block lg:hidden" />
+                    {/* <Plus fill="#121212" className="block lg:hidden" /> */}
                   </button>
                 </div>
                 {/* <div
