@@ -25,18 +25,24 @@ const Navbar = () => {
       title: "Identity verification",
       text: "Streamlined end-to-end identify verification.",
       link: "/our-solutions?type=identity-verification",
+      dropdown: true,
+      dropdownContent: ["Option 1", "Option 2", "Option 3"],
     },
     {
       icon: <Biometric className="w-[39.41px] h-[48px]" />,
       title: "Biometric authentication",
       text: "Protect you users at all touch points in the customer journey.",
       link: "/our-solutions?type=biometric-authentication",
+      dropdown: true,
+      dropdownContent: ["Option 1", "Option 2", "Option 3"],
     },
     {
       icon: <Kyc className="w-[39.41px] h-[48px]" />,
       title: "KYC Compliance",
       text: "Automate and scale KYC compliance to drive down costs.",
       link: "/our-solutions?type=kyc-compliance",
+      dropdown: true,
+      dropdownContent: ["Option 1", "Option 2", "Option 3"],
     },
     {
       icon: <Fraud className="w-[39.41px] h-[48px]" />,
@@ -44,43 +50,25 @@ const Navbar = () => {
       title: "Fraud prevention",
       text: "Prevent identity fraud in your platforms.",
       link: "/our-solutions?type=fraud-preventation",
+      dropdown: false,
+      dropdownContent: ["Option 1", "Option 2", "Option 3"],
     },
     {
       icon: <Image className="w-[39.41px] h-[48px]" />,
       title: "Assisted image capture",
       text: "User-friendly workflow for verification.",
       link: "/our-solutions?type=assisted-image-capture",
+      dropdown: true,
+      dropdownContent: ["Option 1", "Option 2", "Option 3"],
     },
     {
       icon: <Social className="w-[39.41px] h-[48px]" />,
       title: "Social Security Number Verification",
       text: "Seamless social security number verification.",
       link: "/our-solutions?type=social-security-number-verification",
-    },
-    {
-      icon: <Customer className="w-[39.41px] h-[48px]" />,
-      title: "Customer onboarding",
-      text: "Make onboarding seamless and secure for all your users.",
-      link: "/our-solutions?type=customer-onboarding",
-    },
-    {
-      icon: <Proof className="w-[39.41px] h-[48px]" />,
-      title: "Proof of address verification",
-      text: "Automated proof of address authentication.",
-      link: "/our-solutions?type=proof-of-address-verification",
-    },
-    {
-      icon: <Insurance className="w-[39.41px] h-[48px]" />,
-      title: "Insurance card scan",
-      text: "Verify patients and integrate proof of insurance validation into your workflow.",
-      link: "/our-solutions?type=insurance-card-scan",
-    },
-    {
-      icon: <PPE className="w-[39.41px] h-[48px]" />,
-      title: "PPE Detection",
-      text: "Automate the detection of personal protective equipment to prioritise safety.",
-      link: "/our-solutions?type=ppe-detection",
-    },
+      dropdown: true,
+      dropdownContent: ["Option 1", "Option 2", "Option 3"],
+    }
   ];
 
   const industries = [
@@ -120,6 +108,7 @@ const Navbar = () => {
   const solutionsMenuRef = useRef(null);
   const industriesMenuRef = useRef(null);
   const companyMenuRef = useRef(null);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   // useEffect(() => {
   //   menuButton = document.getElementById("menu-button");
@@ -160,6 +149,11 @@ const Navbar = () => {
     prevScrollpos = currentScrollPos;
   };
 
+  const toggleDropdown = (index) => {
+    setDropdownOpen(dropdownOpen === index ? null : index);
+  };
+
+
   return (
     <div>
       {/* lg:py-2.5 py-4  */}
@@ -187,6 +181,7 @@ const Navbar = () => {
               <Menu />
             </button>
           </div>
+          
           <div
             ref={mainMenu}
             className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 lg:h-full  "
@@ -199,7 +194,7 @@ const Navbar = () => {
                     href="/our-solutions"
                     className="block  lg:pl-3 lg:pr-4 lg:font-normal font-semibold lg:text-base text-[18px] rounded "
                   >
-                    Our Solutions
+                    Economy
                   </a>
                   {/* <ArrowDown fill="#121212" className="lg:block hidden" /> */}
                   <button
@@ -212,24 +207,59 @@ const Navbar = () => {
                     {/* <Plus fill="#121212" className="block lg:hidden" /> */}
                   </button>
                 </div>
+
+
                 <div
-  ref={solutionsMenuRef}
-  id="our-solutions-menu"
-  className="w-[100vw] left-0 hidden bg-white lg:border lg:mt-[83px] m-0 lg:absolute lg:top-0 top-[23px] z-30 max-h-[calc(50vh_-_84px)]"
->
-  <div className="flex justify-center items-center py-8">
-    <div className="grid grid-cols-3 gap-8 container mx-auto overflow-y-auto">
-      {solutions.map((ele, i) => (
-        <a href={ele.link} key={i}>
-          <div className="p-4 hover:bg-cardHoverBg rounded-lg border cursor-pointer flex flex-col justify-center items-center">
-            <h3 className="font-semibold text-sm text-center">{ele.title}</h3>
-            <p className="text-xs text-center">{ele.text}</p>
-          </div>
-        </a>
-      ))}
+      ref={solutionsMenuRef}
+      id="our-solutions-menu"
+      className="w-[100vw] left-0 hidden bg-white lg:border lg:mt-[83px] m-0 lg:absolute lg:top-0 top-[23px] z-50 max-h-[calc(50vh_-_84px)]"
+    >
+      <div className="flex justify-center items-center py-8">
+        <div className="grid grid-cols-3 gap-8 container mx-auto overflow-y-auto px-4">
+          {solutions.map((ele, i) => (
+            <div
+              key={i}
+              className={`hover:bg-cardHoverBg rounded-lg border cursor-pointer flex flex-col justify-center items-center ${
+                ele.dropdown ? "relative" : ""
+              }`}
+            >
+              <div className="flex items-center p-2">
+                <h3 className="font-semibold text-sm text-center">
+                  {ele.title}
+                </h3>
+                {ele.dropdown && (
+                  <button
+                    className="ml-1"
+                    onClick={() => toggleDropdown(i)}
+                  >
+                    <ArrowDown
+                      fill="#121212"
+                      className={`w-4 h-4 ${
+                        dropdownOpen === i ? "rotate-180" : ""
+                      }`}
+                    />
+                  </button>
+                )}
+              </div>
+              {dropdownOpen === i && ele.dropdown && (
+                <div className="absolute w-full z-50 top-full left-0">
+                  <ul className="py-2 px-4 bg-white shadow-lg rounded-lg">
+                    {ele.dropdownContent.map((option, index) => (
+                      <li
+                        key={index}
+                        className="cursor-pointer py-1 hover:bg-gray-200"
+                      >
+                        {option}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
               </li>
               <li className="lg:flex block  items-center gap-2  industries nav-link lg:w-auto w-full lg:px-0 p-0 lg:static relative">
