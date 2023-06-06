@@ -188,80 +188,77 @@ const Navbar = () => {
             id="navbar-sticky"
           >
             <ul className="flex flex-col h-full mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0  md:border-0 md:bg-white lg:h-full min-h-auto max-h-[calc(100vh_-_84px)] nav-list">
-              <li className="lg:flex block  items-center gap-2  our-solutions nav-link lg:w-auto w-full lg:px-0 p-0  lg:static relative ">
-                <div className="lg:p-[12px_16px] p-[16px_24px] flex items-center lg:justify-start justify-between w-full title-icon rounded-lg">
-                  <a
-                    href="/our-solutions"
-                    className="block  lg:pl-3 lg:pr-4 lg:font-normal font-semibold lg:text-base text-[18px] rounded "
-                  >
-                    Economy
-                  </a>
-                  {/* <ArrowDown fill="#121212" className="lg:block hidden" /> */}
-                  <button
-                    onClick={toggleSolutions}
-                    type="button"
-                    // aria-expanded="false"
-                    // aria-controls="our-solutions-menu"
-                    // data-collapse-toggle="our-solutions-menu"
-                  >
-                    {/* <Plus fill="#121212" className="block lg:hidden" /> */}
-                  </button>
-                </div>
 
 
-                <div
-      ref={solutionsMenuRef}
-      id="our-solutions-menu"
-      className="w-[100vw] left-0 hidden bg-white lg:border lg:mt-[83px] m-0 lg:absolute lg:top-0 top-[23px] z-50 max-h-[calc(50vh_-_84px)]"
+
+
+
+              
+            <li className="lg:flex block items-center gap-2 our-solutions nav-link lg:w-auto w-full lg:px-0 p-0 lg:static relative">
+  <div className="lg:p-[12px_16px] p-[16px_24px] flex items-center lg:justify-start justify-between w-full title-icon rounded-lg">
+    <a
+      href="/our-solutions"
+      className="block lg:pl-3 lg:pr-4 lg:font-normal font-semibold lg:text-base text-[18px] rounded"
     >
-      <div className="flex justify-center items-center py-8">
-        <div className="grid grid-cols-3 gap-8 container mx-auto overflow-y-auto px-4">
-          {solutions.map((ele, i) => (
-            <div
-              key={i}
-              className={`hover:bg-cardHoverBg rounded-lg border cursor-pointer flex flex-col justify-center items-center ${
-                ele.dropdown ? "relative" : ""
-              }`}
-            >
-              <div className="flex items-center p-2">
-                <h3 className="font-semibold text-sm text-center">
-                  {ele.title}
-                </h3>
-                {ele.dropdown && (
-                  <button
-                    className="ml-1"
-                    onClick={() => toggleDropdown(i)}
-                  >
-                    <ArrowDown
-                      fill="#121212"
-                      className={`w-4 h-4 ${
-                        dropdownOpen === i ? "rotate-180" : ""
-                      }`}
-                    />
-                  </button>
-                )}
-              </div>
-              {dropdownOpen === i && ele.dropdown && (
-                <div className="absolute w-full z-50 top-full left-0">
-                  <ul className="py-2 px-4 bg-white shadow-lg rounded-lg">
-                    {ele.dropdownContent.map((option, index) => (
-                      <li
-                        key={index}
-                        className="cursor-pointer py-1 hover:bg-gray-200"
-                      >
-                        {option}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+      Economy
+    </a>
+    <button
+      onClick={toggleSolutions}
+      type="button"
+    >
+      <Plus fill="#121212" className="block lg:hidden" />
+    </button>
+  </div>
+
+  <div
+    ref={solutionsMenuRef}
+    id="our-solutions-menu"
+    className="w-full left-0 hidden bg-white lg:border lg:absolute lg:top-full top-auto z-50 mt-1"
+  >
+    <div className="flex justify-center items-center py-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 container mx-auto overflow-y-auto px-4">
+        {solutions.map((ele, i) => (
+          <div
+            key={i}
+            className={`hover:bg-cardHoverBg rounded-lg border cursor-pointer flex flex-col justify-center items-center ${
+              ele.dropdown ? "relative" : ""
+            }`}
+          >
+            <div className="flex items-center p-2">
+              <h3 className="font-semibold text-sm text-center">
+                {ele.title}
+              </h3>
+              {ele.dropdown && (
+                <button className="ml-1" onClick={() => toggleDropdown(i)}>
+                  <ArrowDown
+                    fill="#121212"
+                    className={`w-4 h-4 ${
+                      dropdownOpen === i ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
               )}
             </div>
-          ))}
-        </div>
+            {dropdownOpen === i && ele.dropdown && (
+              <div className="absolute w-full z-50 top-full left-0">
+                <ul className="py-2 px-4 bg-white shadow-lg rounded-lg">
+                  {ele.dropdownContent.map((option, index) => (
+                    <li
+                      key={index}
+                      className="cursor-pointer py-1 hover:bg-gray-200"
+                    >
+                      {option}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
-
-              </li>
+  </div>
+</li>
               <li className="lg:flex block  items-center gap-2  industries nav-link lg:w-auto w-full lg:px-0 p-0 lg:static relative">
                 <div className="lg:p-[12px_16px] p-[16px_24px] flex items-center lg:justify-start justify-between lg:w-auto w-full title-icon rounded-lg  relative">
                   <a
@@ -281,26 +278,6 @@ const Navbar = () => {
                     {/* <Plus fill="#121212" className="block lg:hidden" /> */}
                   </button>
                 </div>
-
-                {/* <div
-                  ref={industriesMenuRef}
-                  id="industries-menu"
-                  className="w-[100vw] left-0  hidden  bg-white lg:border lg:mt-[83px] m-0 lg:absolute  lg:top-0 top-[-23px] z-30 "
-                >
-                  <div className="lg:grid grid-cols-3 gap-8 container mx-auto lg:pt-24">
-                    {industries.map((ele, i) => (
-                      <a href={ele.link}>
-                        <div
-                          key={i}
-                          className="p-6 mb-5 hover:bg-cardHoverBg lg:rounded-3xl lg:border-none border-b cursor-pointer"
-                        >
-                          <h3 className="font-semibold text-xl">{ele.title}</h3>
-                          <p className="mt-[8px]">{ele.text}</p>
-                        </div>
-                      </a>
-                    ))}
-                  </div>
-                </div> */}
               </li>
               <li className="flex items-center lg:hover:bg-cardHoverBg rounded-xl mt-4 mb-4 lg:w-auto w-full cursor-pointer lg:px-0 px-6">
                 <Link
@@ -329,66 +306,6 @@ const Navbar = () => {
                     {/* <Plus fill="#121212" className="block lg:hidden" /> */}
                   </button>
                 </div>
-                {/* <div
-                  ref={companyMenuRef}
-                  id="our-company-menu"
-                  className="lg:w-[200px] w-full left-0  hidden  bg-white lg:border  lg:mt-[83px] m-0 lg:absolute lg:top-0 top-[-23px] z-30 "
-                >
-                  <ul>
-                    <li className="lg:p-3  p-6 border-b">
-                      <a
-                        className="lg:font-normal lg:text-base font-semibold text-[18px]"
-                        href="/our-company#about-rattify"
-                      >
-                        About Rattify
-                      </a>
-                    </li>
-                    <li className="lg:p-3  p-6 border-b">
-                      <a
-                        className="lg:font-normal lg:text-base font-semibold text-[18px]"
-                        href="/our-company#why-rattify"
-                      >
-                        Why Rattify
-                      </a>
-                    </li>
-
-                    <li className="lg:p-3  p-6 border-b">
-                      <a
-                        className="lg:font-normal lg:text-base font-semibold text-[18px]"
-                        href="/our-company#blog"
-                      >
-                        Blog
-                      </a>
-                    </li>
-
-                    <li className="lg:p-3  p-6 border-b">
-                      <a
-                        className="lg:font-normal lg:text-base font-semibold text-[18px]"
-                        href="/our-company#press"
-                      >
-                        Press
-                      </a>
-                    </li>
-
-                    <li className="lg:p-3  p-6 border-b">
-                      <a
-                        className="lg:font-normal lg:text-base font-semibold text-[18px]"
-                        href="/our-company#careers"
-                      >
-                        Careers
-                      </a>
-                    </li>
-
-                    <li className="lg:p-3  p-6 border-b">
-                      <a
-                        className="lg:font-normal lg:text-base font-semibold text-[18px]"
-                        href="/talk-to-us"
-                      >
-                        Contact us
-                      </a>
-                    </li>
-                  </ul>
-                </div> */}
               </li>
               <li className="flex items-center lg:hover:bg-cardHoverBg rounded-xl mt-4 mb-4 cursor-pointer lg:w-auto w-full lg:px-0 px-6">
                 <a
