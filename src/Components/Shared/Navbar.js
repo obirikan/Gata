@@ -212,26 +212,25 @@ const Navbar = () => {
                     {/* <Plus fill="#121212" className="block lg:hidden" /> */}
                   </button>
                 </div>
-                {/* <div
-                  ref={solutionsMenuRef}
-                  id="our-solutions-menu"
-                  className="w-[100vw] left-0 hidden bg-white lg:border  lg:mt-[83px] m-0 lg:absolute lg:top-0 top-[23px] z-30 overflow-y-scroll max-h-[calc(100vh_-_84px)]"
-                >
-                  {/* <div className="lg:grid grid-cols-3 block gap-8 container mx-auto lg:pt-24">
-                    {solutions.map((ele, i) => (
-                      <a href={ele.link}>
-                        <div
-                          key={i}
-                          className="p-5 mb-5 hover:bg-cardHoverBg lg:rounded-3xl lg:border-none border-b lg:h-[200px] cursor-pointer"
-                        >
-                           <span className="lg:block hidden">{ele.icon}</span> 
-                          <h3 className="font-semibold text-lg">{ele.title}</h3>
-                          <p>{ele.text}</p>
-                        </div>
-                      </a>
-                    ))}
-                  </div> 
-                </div> */}
+                <div
+  ref={solutionsMenuRef}
+  id="our-solutions-menu"
+  className="w-[100vw] left-0 hidden bg-white lg:border lg:mt-[83px] m-0 lg:absolute lg:top-0 top-[23px] z-30 max-h-[calc(50vh_-_84px)]"
+>
+  <div className="flex justify-center items-center py-8">
+    <div className="grid grid-cols-3 gap-8 container mx-auto overflow-y-auto">
+      {solutions.map((ele, i) => (
+        <a href={ele.link} key={i}>
+          <div className="p-4 hover:bg-cardHoverBg rounded-lg border cursor-pointer flex flex-col justify-center items-center">
+            <h3 className="font-semibold text-sm text-center">{ele.title}</h3>
+            <p className="text-xs text-center">{ele.text}</p>
+          </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</div>
+
               </li>
               <li className="lg:flex block  items-center gap-2  industries nav-link lg:w-auto w-full lg:px-0 p-0 lg:static relative">
                 <div className="lg:p-[12px_16px] p-[16px_24px] flex items-center lg:justify-start justify-between lg:w-auto w-full title-icon rounded-lg  relative">
@@ -241,7 +240,7 @@ const Navbar = () => {
                   >
                     Industries
                   </a>
-                  {/* <ArrowDown fill="#121212" className="lg:block hidden" /> */}
+                   <ArrowDown fill="#121212" className="lg:block hidden" /> 
                   <button
                     onClick={toggleIndustries}
                     type="button"
