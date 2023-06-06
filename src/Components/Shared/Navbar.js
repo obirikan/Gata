@@ -193,7 +193,7 @@ const Navbar = () => {
 
 
 
-              
+
             <li className="lg:flex block items-center gap-2 our-solutions nav-link lg:w-auto w-full lg:px-0 p-0 lg:static relative">
   <div className="lg:p-[12px_16px] p-[16px_24px] flex items-center lg:justify-start justify-between w-full title-icon rounded-lg">
     <a
@@ -216,7 +216,7 @@ const Navbar = () => {
     className="w-full left-0 hidden bg-white lg:border lg:absolute lg:top-full top-auto z-50 mt-1"
   >
     <div className="flex justify-center items-center py-8">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 container mx-auto overflow-y-auto px-4">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 container mx-auto overflow-y-auto px-4 h-md">
         {solutions.map((ele, i) => (
           <div
             key={i}
@@ -240,7 +240,7 @@ const Navbar = () => {
               )}
             </div>
             {dropdownOpen === i && ele.dropdown && (
-              <div className="absolute w-full z-50 top-full left-0">
+              <div className="absolute w-full z-50 top-full left-0 ">
                 <ul className="py-2 px-4 bg-white shadow-lg rounded-lg">
                   {ele.dropdownContent.map((option, index) => (
                     <li
