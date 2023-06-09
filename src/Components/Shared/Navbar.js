@@ -18,6 +18,8 @@ import { ReactComponent as Menu } from "../../assets/svgs/hamburger.svg";
 import { ReactComponent as Cancel } from "../../assets/svgs/cancel.svg";
 import { ReactComponent as Plus } from "../../assets/svgs/plus.svg";
 import { ReactComponent as Minus } from "../../assets/svgs/minus.svg";
+
+import gata from "../../assets/images/gata.png";
 const Navbar = () => {
   const solutions = [
     {
@@ -160,7 +162,8 @@ const Navbar = () => {
       <nav id="navbar" className="lg:px-6 lg:py-0  lg:h-[84px] py-6   fixed w-full z-20 top-0 left-0   text-appBlack">
         <div className="container flex flex-wrap items-center justify-between mx-auto h-full bg-#355e3b ">
           <a href="/" className="flex items-center lg:pl-0 pl-6">
-            <Rattify fill="black" />
+            {/* <Rattify fill="black" /> */}
+            <img src={gata} alt='icon' width={100}/>
           </a>
           <div className="md:order-2 gap-5 ">
             <a
