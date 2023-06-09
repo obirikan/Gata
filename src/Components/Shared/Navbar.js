@@ -157,8 +157,8 @@ const Navbar = () => {
   return (
     <div>
       {/* lg:py-2.5 py-4  */}
-      <nav id="navbar" className="bg-white   lg:px-6 lg:py-0  lg:h-[84px] py-6   fixed w-full z-20 top-0 left-0 border-b border-gray-200  text-appBlack">
-        <div className="container flex flex-wrap items-center justify-between mx-auto h-full">
+      <nav id="navbar" className="lg:px-6 lg:py-0  lg:h-[84px] py-6   fixed w-full z-20 top-0 left-0   text-appBlack">
+        <div className="container flex flex-wrap items-center justify-between mx-auto h-full bg-#355e3b ">
           <a href="/" className="flex items-center lg:pl-0 pl-6">
             <Rattify fill="black" />
           </a>
@@ -187,18 +187,17 @@ const Navbar = () => {
             className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1 lg:h-full  "
             id="navbar-sticky"
           >
-            <ul className="flex flex-col h-full mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0  md:border-0 md:bg-white lg:h-full min-h-auto max-h-[calc(100vh_-_84px)] nav-list">
-
-
-
-
+<ul className="flex flex-col h-full mt-4 border rounded-lg bg-white md:flex-row md:space-x-8 md:mt-0 md:border-0 lg:h-full min-h-auto max-h-[calc(100vh_-_84px)] nav-list
+    sm:bg-355e3b
+    lg:bg-#355e3b"
+>
 
 
             <li className="lg:flex block items-center gap-2 our-solutions nav-link lg:w-auto w-full lg:px-0 p-0 lg:static relative">
-  <div className="lg:p-[12px_16px] p-[16px_24px] flex items-center lg:justify-start justify-between w-full title-icon rounded-lg">
+  <div className="lg:p-[12px_16px]  p-[16px_24px] flex items-center lg:justify-start justify-between w-full title-icon ">
     <a
       href="/our-solutions"
-      className="block lg:pl-3 lg:pr-4 lg:font-normal font-semibold lg:text-base text-[18px] rounded"
+      className="block lg:pl-3 lg:pr-4 lg:font-normal font-semibold lg:text-base text-[18px] "
     >
       Economy
     </a>
@@ -209,9 +208,76 @@ const Navbar = () => {
       <Plus fill="#121212" className="block lg:hidden" />
     </button>
   </div>
-
   <div
     ref={solutionsMenuRef}
+    id="our-solutions-menu"
+    className="w-full left-0 hidden bg-white lg:border lg:absolute lg:top-full top-auto z-50 mt-0"
+  >
+    <div className="flex justify-center items-center py-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 container mx-auto overflow-y-auto px-4 h-md">
+        {solutions.map((ele, i) => (
+          <div
+            key={i}
+            className={`hover:bg-cardHoverBg rounded-lg border cursor-pointer flex flex-col justify-center items-center ${
+              ele.dropdown ? "relative" : ""
+            }`}
+          >
+            <div className="flex items-center p-2">
+              <h3 className="font-semibold text-sm text-center">
+                {ele.title}
+              </h3>
+              {ele.dropdown && (
+                <button className="ml-1" onClick={() => toggleDropdown(i)}>
+                  <ArrowDown
+                    fill="#121212"
+                    className={`w-4 h-4 ${
+                      dropdownOpen === i ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+              )}
+            </div>
+            {dropdownOpen === i && ele.dropdown && (
+              <div className="absolute w-full z-50 top-full left-0 ">
+                <ul className="py-2 px-4 bg-white shadow-lg rounded-lg">
+                  {ele.dropdownContent.map((option, index) => (
+                    <li
+                      key={index}
+                      className="cursor-pointer py-1 hover:bg-gray-200"
+                    >
+                      {option}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</li>
+
+
+
+
+<li className="lg:flex block items-center gap-2 our-solutions nav-link lg:w-auto w-full lg:px-0 p-0 lg:static relative">
+  <div className="lg:p-[12px_16px] p-[16px_24px] flex items-center lg:justify-start justify-between w-full title-icon rounded-lg">
+    <a
+      href="/our-solutions"
+      className="block lg:pl-3 lg:pr-4 lg:font-normal font-semibold lg:text-base text-[18px] rounded"
+    >
+      Tokens
+    </a>
+    <button
+      // onClick={toggleSolutions}
+      type="button"
+    >
+      <Plus fill="#121212" className="block lg:hidden" />
+    </button>
+  </div>
+  <div
+    // ref={solutionsMenuRef}
     id="our-solutions-menu"
     className="w-full left-0 hidden bg-white lg:border lg:absolute lg:top-full top-auto z-50 mt-1"
   >
@@ -259,78 +325,203 @@ const Navbar = () => {
     </div>
   </div>
 </li>
-              <li className="lg:flex block  items-center gap-2  industries nav-link lg:w-auto w-full lg:px-0 p-0 lg:static relative">
-                <div className="lg:p-[12px_16px] p-[16px_24px] flex items-center lg:justify-start justify-between lg:w-auto w-full title-icon rounded-lg  relative">
-                  <a
-                    href="/industries"
-                    className="block  lg:pl-3 lg:pr-4 lg:font-normal font-semibold lg:text-base text-[18px]  rounded  md:hover:bg-transparent   "
-                  >
-                    Industries
-                  </a>
-                   <ArrowDown fill="#121212" className="lg:block hidden" /> 
-                  <button
-                    onClick={toggleIndustries}
-                    type="button"
-                    // aria-expanded="false"
-                    // aria-controls="our-solutions-menu"
-                    // data-collapse-toggle="our-solutions-menu"
-                  >
-                    {/* <Plus fill="#121212" className="block lg:hidden" /> */}
-                  </button>
-                </div>
-              </li>
-              <li className="flex items-center lg:hover:bg-cardHoverBg rounded-xl mt-4 mb-4 lg:w-auto w-full cursor-pointer lg:px-0 px-6">
-                <Link
-                  to="/pricing"
-                  className="block  lg:pl-4 lg:pr-4 lg:font-normal font-semibold lg:text-base text-[18px] rounded  md:hover:bg-transparent"
-                >
-                  Pricing
-                </Link>
-              </li>
-              <li className="lg:flex block items-center gap-2  our-company lg:w-auto w-full lg:nav-link lg:px-0 p-0 lg:relative static">
-                <div className="lg:p-[12px_16px] p-[16px_24px] flex items-center lg:justify-start justify-between lg:w-auto w-full title-icon rounded-lg">
-                  <a
-                    href="/our-company"
-                    className="block  lg:pl-3 lg:pr-4 lg:font-normal font-semibold lg:text-base text-[18px] rounded  md:hover:bg-transparent   "
-                  >
-                    Our Company
-                  </a>
-                  {/* <ArrowDown fill="#121212" className="lg:block hidden" /> */}
-                  <button
-                    onClick={toggleCompany}
-                    type="button"
-                    // aria-expanded="false"
-                    // aria-controls="our-solutions-menu"
-                    // data-collapse-toggle="our-solutions-menu"
-                  >
-                    {/* <Plus fill="#121212" className="block lg:hidden" /> */}
-                  </button>
-                </div>
-              </li>
-              <li className="flex items-center lg:hover:bg-cardHoverBg rounded-xl mt-4 mb-4 cursor-pointer lg:w-auto w-full lg:px-0 px-6">
-                <a
-                  href="https://docs.rattify.com"
-                  className="block  lg:pl-4 lg:pr-4 lg:font-normal font-semibold  lg:text-base text-[18px] rounded  md:hover:bg-transparent  "
-                >
-                  For Developers
-                </a>
-              </li>
-              <li className="lg:hidden flex items-center lg:hover:bg-cardHoverBg rounded-xl mt-4 mb-4 cursor-pointer lg:px-0 px-6">
-                <a
-                  href="https://dashboard.rattify.com/login"
-                  className="block  lg:pl-4 lg:pr-4 lg:font-normal font-semibold  text-[18px] rounded  md:hover:bg-transparent  "
-                >
-                  Sign in
-                </a>
-              </li>
-              <li className="lg:hidden flex items-center lg:hover:bg-cardHoverBg rounded-xl mt-4 mb-4 cursor-pointer lg:px-0 px-6">
-                <a
-                  href="/talk-to-us"
-                  className="text-white gradient-bg  w-full  focus:ring-4   rounded-lg  px-5 py-2.5 text-center mr-3 md:mr-0 "
-                >
-                  Talk to us
-                </a>
-              </li>
+
+
+<li className="lg:flex block items-center gap-2 our-solutions nav-link lg:w-auto w-full lg:px-0 p-0 lg:static relative">
+  <div className="lg:p-[12px_16px] p-[16px_24px] flex items-center lg:justify-start justify-between w-full title-icon rounded-lg">
+    <a
+      href="/our-solutions"
+      className="block lg:pl-3 lg:pr-4 lg:font-normal font-semibold lg:text-base text-[18px] rounded"
+    >
+      Partnerships
+    </a>
+    <button
+      // onClick={toggleSolutions}
+      type="button"
+    >
+      <Plus fill="#121212" className="block lg:hidden" />
+    </button>
+  </div>
+  <div
+    // ref={solutionsMenuRef}
+    id="our-solutions-menu"
+    className="w-full left-0 hidden bg-white lg:border lg:absolute lg:top-full top-auto z-50 mt-1"
+  >
+    <div className="flex justify-center items-center py-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 container mx-auto overflow-y-auto px-4 h-md">
+        {solutions.map((ele, i) => (
+          <div
+            key={i}
+            className={`hover:bg-cardHoverBg rounded-lg border cursor-pointer flex flex-col justify-center items-center ${
+              ele.dropdown ? "relative" : ""
+            }`}
+          >
+            <div className="flex items-center p-2">
+              <h3 className="font-semibold text-sm text-center">
+                {ele.title}
+              </h3>
+              {ele.dropdown && (
+                <button className="ml-1" onClick={() => toggleDropdown(i)}>
+                  <ArrowDown
+                    fill="#121212"
+                    className={`w-4 h-4 ${
+                      dropdownOpen === i ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+              )}
+            </div>
+            {dropdownOpen === i && ele.dropdown && (
+              <div className="absolute w-full z-50 top-full left-0 ">
+                <ul className="py-2 px-4 bg-white shadow-lg rounded-lg">
+                  {ele.dropdownContent.map((option, index) => (
+                    <li
+                      key={index}
+                      className="cursor-pointer py-1 hover:bg-gray-200"
+                    >
+                      {option}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</li>
+
+
+<li className="lg:flex block items-center gap-2 our-solutions nav-link lg:w-auto w-full lg:px-0 p-0 lg:static relative">
+  <div className="lg:p-[12px_16px] p-[16px_24px] flex items-center lg:justify-start justify-between w-full title-icon rounded-lg">
+    <a
+      href="/our-solutions"
+      className="block lg:pl-3 lg:pr-4 lg:font-normal font-semibold lg:text-base text-[18px] rounded"
+    >
+      Develop
+    </a>
+    <button
+      // onClick={toggleSolutions}
+      type="button"
+    >
+      <Plus fill="#121212" className="block lg:hidden" />
+    </button>
+  </div>
+  <div
+    // ref={solutionsMenuRef}
+    id="our-solutions-menu"
+    className="w-full left-0 hidden bg-white lg:border lg:absolute lg:top-full top-auto z-50 mt-1"
+  >
+    <div className="flex justify-center items-center py-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 container mx-auto overflow-y-auto px-4 h-md">
+        {solutions.map((ele, i) => (
+          <div
+            key={i}
+            className={`hover:bg-cardHoverBg rounded-lg border cursor-pointer flex flex-col justify-center items-center ${
+              ele.dropdown ? "relative" : ""
+            }`}
+          >
+            <div className="flex items-center p-2">
+              <h3 className="font-semibold text-sm text-center">
+                {ele.title}
+              </h3>
+              {ele.dropdown && (
+                <button className="ml-1" onClick={() => toggleDropdown(i)}>
+                  <ArrowDown
+                    fill="#121212"
+                    className={`w-4 h-4 ${
+                      dropdownOpen === i ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+              )}
+            </div>
+            {dropdownOpen === i && ele.dropdown && (
+              <div className="absolute w-full z-50 top-full left-0 ">
+                <ul className="py-2 px-4 bg-white shadow-lg rounded-lg">
+                  {ele.dropdownContent.map((option, index) => (
+                    <li
+                      key={index}
+                      className="cursor-pointer py-1 hover:bg-gray-200"
+                    >
+                      {option}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</li>
+
+<li className="lg:flex block items-center gap-2 our-solutions nav-link lg:w-auto w-full lg:px-0 p-0 lg:static relative">
+  <div className="lg:p-[12px_16px] p-[16px_24px] flex items-center lg:justify-start justify-between w-full title-icon rounded-lg">
+    <a
+      href="/our-solutions"
+      className="block lg:pl-3 lg:pr-4 lg:font-normal font-semibold lg:text-base text-[18px] rounded"
+    >
+      Other
+    </a>
+    <button
+      // onClick={toggleSolutions}
+      type="button"
+    >
+      <Plus fill="#121212" className="block lg:hidden" />
+    </button>
+  </div>
+  <div
+    // ref={solutionsMenuRef}
+    id="our-solutions-menu"
+    className="w-full left-0 hidden bg-white lg:border lg:absolute lg:top-full top-auto z-50 mt-1"
+  >
+    <div className="flex justify-center items-center py-8">
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 container mx-auto overflow-y-auto px-4 h-md">
+        {solutions.map((ele, i) => (
+          <div
+            key={i}
+            className={`hover:bg-cardHoverBg rounded-lg border cursor-pointer flex flex-col justify-center items-center ${
+              ele.dropdown ? "relative" : ""
+            }`}
+          >
+            <div className="flex items-center p-2">
+              <h3 className="font-semibold text-sm text-center">
+                {ele.title}
+              </h3>
+              {ele.dropdown && (
+                <button className="ml-1" onClick={() => toggleDropdown(i)}>
+                  <ArrowDown
+                    fill="#121212"
+                    className={`w-4 h-4 ${
+                      dropdownOpen === i ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+              )}
+            </div>
+            {dropdownOpen === i && ele.dropdown && (
+              <div className="absolute w-full z-50 top-full left-0 ">
+                <ul className="py-2 px-4 bg-white shadow-lg rounded-lg">
+                  {ele.dropdownContent.map((option, index) => (
+                    <li
+                      key={index}
+                      className="cursor-pointer py-1 hover:bg-gray-200"
+                    >
+                      {option}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</li>
             </ul>
           </div>
         </div>

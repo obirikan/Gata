@@ -2,6 +2,33 @@ html,
 body {
   box-sizing: border-box;
   scroll-behavior: smooth;
+  background-color: #355e3b
+  ;
+}
+
+.nav-list {
+  background-color: #355e3b; /* Default background color */
+}
+
+.searchinput{
+width: 382px;
+height: 41px;
+background: #355E3B;
+border: 1px solid #E8CE6A;
+box-shadow: 0px 0px 4px rgba(232, 206, 106, 0.24);
+border-radius: 8px;
+}
+
+@media (max-width: 640px) {
+  .nav-list {
+    background-color: #ffffff; /* Background color for small screens */
+  }
+}
+
+@media (min-width: 1024px) {
+  .nav-list {
+    background-color: #355e3b;; /* Background color for large screens */
+  }
 }
 
 body {
