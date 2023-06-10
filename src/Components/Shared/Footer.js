@@ -13,42 +13,7 @@ const Footer = () => {
     {
       title: "Biometric Authentication",
       link: "/our-solutions?type=biometric-authentication",
-    },
-    {
-      title: "KYC Compliance",
-      link: "/our-solutions?type=kyc-compliance",
-    },
-    {
-      title: "Fraud Prevention",
-      link: "/our-solutions?type=fraud-preventation",
-    },
-    {
-      title: "Assisted Image Capture",
-      link: "/our-solutions?type=assisted-image-capture",
-
-    },
-    {
-      title: "Social Security Number Verification",
-      link: "/our-solutions?type=social-security-number-verification",
-
-    },
-    {
-      title: "Customer Onboarding",
-      link: "/our-solutions?type=customer-onboarding",
-
-    },
-    {
-      title: "Proof of Address Verification",
-      link: "/our-solutions?type=proof-of-address-verification",
-    },
-    {
-      title: "Insurance Card Scan",
-      link: "/our-solutions?type=insurance-card-scan",
-    },
-    {
-      title: "PPE Detection",
-      link: "/our-solutions?type=ppe-detection",
-    },
+    }
   ];
 
   const industries = [
@@ -59,23 +24,7 @@ const Footer = () => {
     {
      title: "Government",
      link: "/industries?type=government",
-    },
-    {
-     title: "Healthcare",
-     link: "/industries?type=healthcare",
-    },
-    {
-     title: "HR Management",
-     link: "/industries?type=hr-management",
-    },
-    {
-     title: "Travel & Transportation",
-     link: "/industries?type=travel-%26-transportation",
-    },
-    {
-     title: "Telecommunications",
-     link: "/industries?type=telecommunications",
-    },
+    }
   ];
 
   const others = [
@@ -86,31 +35,7 @@ const Footer = () => {
     {
      title: "About the Company",
       link: "/our-company",
-    },
-    {
-     title: "Why Rattify?",
-      link: "/our-company#why-rattify",
-    },
-    {
-     title: "Blog",
-      link: "/our-company#blog",
-    },
-    {
-     title: "Press",
-      link: "/our-company#press",
-    },
-    {
-     title: "Careers",
-      link: "/our-company#careers",
-    },
-    {
-     title: "For Developers",
-      link: "https://docs.rattify.com",
-    },
-    {
-     title: "Contact Us",
-      link: "/our-company#talk-to-us",
-    },
+    }
   ];
   return (
     <footer className="bg-appBlack text-white px-6 ">

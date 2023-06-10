@@ -159,7 +159,7 @@ const Navbar = () => {
   return (
     <div>
       {/* lg:py-2.5 py-4  */}
-      <nav id="navbar" className="lg:px-6 lg:py-0  lg:h-[84px] py-6   fixed w-full z-20 top-0 left-0   text-appBlack">
+      <nav id="navbar" className="lg:px-6 lg:py-0  lg:h-[84px] py-6   fixed w-full z-20 top-0 left-0 navbarbg  text-appBlack">
         <div className="container flex flex-wrap items-center justify-between mx-auto h-full bg-#355e3b ">
           <a href="/" className="flex items-center lg:pl-0 pl-6">
             {/* <Rattify fill="black" /> */}
@@ -168,7 +168,7 @@ const Navbar = () => {
           <div className="md:order-2 gap-5 ">
             <a
               href="#no"
-              className="text-white gradient-bg  lg:inline-block hidden focus:ring-4   rounded-lg  px-5 py-2.5 text-center mr-3 md:mr-0 "
+              className="text-#355E3B gradient-bg  lg:inline-block hidden focus:ring-4   rounded-lg  px-5 py-2.5 text-center mr-3 md:mr-0 "
             >
               Create An Account 
             </a>
@@ -176,7 +176,7 @@ const Navbar = () => {
               onClick={toggleMenu}
               // data-collapse-toggle="navbar-sticky"
               type="button"
-              className="inline-flex items-center p-2 lg:pr-0 mr-6  text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 "
+              className="inline-flex items-center p-2 lg:pr-0 mr-6  text-gray-500 rounded-lg md:hidden  focus:outline-none focus:ring-2 focus:ring-gray-200 "
               // aria-controls="navbar-sticky"
               // aria-expanded="false"
             >

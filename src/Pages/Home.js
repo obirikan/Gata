@@ -12,6 +12,7 @@ const Home = () => {
   return (
     <PageWrapper>
       <Hero />
+      {/* <OurSolutions/> */}
       {/* <WhyChooseRattify/>
       <OurSolutions/>
       <FairAndEthical/>
